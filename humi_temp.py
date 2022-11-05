@@ -8,9 +8,7 @@ pin = 2
 
 # mqtt protocol setup
 client = mqtt.Client()
-
 client.connect('192.168.0.11', 1883)
-
 
 while True:
     humidity, temperature = Adafruit_DHT.read_retry(sensor, pin);
