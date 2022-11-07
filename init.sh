@@ -4,9 +4,7 @@ if [ ! -e $FILE ];then
 	sudo mkdir /var/run/mosquitto/
 fi
 
-sudo chown mosquitto: /var/run/mosquitto
-sudo mosquitto -c /etc/mosquitto/mosquitto.conf --deamon
-
-sudo python3 /home/pi/Desktop/raspberrypi/main.py
+sudo chown mosquitto: /var/run/mosquitto -d
+sudo mosquitto -c /etc/mosquitto/mosquitto.conf
 # mosquitto subscriber init (for test)
-#mosquitto_sub -h 192.168.0.11 -t /test
+# sudo mosquitto_sub -h 192.168.0.11 -t /test
