@@ -1,0 +1,12 @@
+#/lib/systemd/system/myscript.service
+[Unit]
+Description=My Script Service
+After=multi-user.target
+
+[Service]
+ExecStartPre=/usr/bin/sh -c 'until ping -c1 google.com; do sleep 1; done'
+Type=idle
+ExecStart=/usr/bin/sh /home/pi/Desktop/raspberrypi/init.sh > /home/pi/Desktop/raspberrypi/log.txt 2>&1
+
+[Install]
+WantedBy=multi-user.target

@@ -1,7 +1,10 @@
-import paho.mqtt.client as mqtt
 import json
 import Adafruit_DHT
 import time
+import sys
+
+sys.path.append("/home/pi/.local/lib/python3.9/site-packages")
+import paho.mqtt.client as mqtt
 
 # Raspi seosor setup
 sensor = Adafruit_DHT.DHT11
